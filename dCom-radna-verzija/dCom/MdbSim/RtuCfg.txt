@@ -1,0 +1,16 @@
+STA 2
+TCP 49852
+
+DO_REG 4 2400 0 0 1 0 DO @PrvaVrata
+DO_REG 4 2401 0 0 1 0 DO @DrugaVrata
+DO_REG 4 2402 0 0 1 0 DO @PrviProzor
+DO_REG 4 2403 0 0 1 0 DO @DrugiProzor
+DO_REG 4 2404 0 0 1 0 DO @TreciProzor
+DO_REG 4 2405 0 0 1 0 DO @CetvrtiProzor
+
+HR_INT 1 4300 0 0 1 0 AO @Bojler
+HR_INT 1 4301 0 0 1 0 AO @KlimaUredjaj
+
+IN_REG 2 2001 0 0 1 0 AI @SenzorTemp
+IN_REG 2 2000 0 0 1 0 AI @JacinaPanela
+IN_REG 2 2002 0 0 1 0 AI @SenzorPritiska
