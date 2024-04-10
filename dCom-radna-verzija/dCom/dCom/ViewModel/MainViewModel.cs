@@ -5,6 +5,7 @@ using ProcessingModule;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Threading;
@@ -189,6 +190,7 @@ namespace dCom.ViewModel
 				ElapsedTime = ElapsedTime.Add(new TimeSpan(0, 0, 1));
 				acquisitionTrigger.Set();
                 automationTrigger.Set();
+
 				Thread.Sleep(1000);
 			}
 		}

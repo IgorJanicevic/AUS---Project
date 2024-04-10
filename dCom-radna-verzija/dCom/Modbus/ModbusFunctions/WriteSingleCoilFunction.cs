@@ -25,14 +25,47 @@ namespace Modbus.ModbusFunctions
         public override byte[] PackRequest()
         {
             //TO DO: IMPLEMENT
-            throw new NotImplementedException();
+            byte[] request = new byte[12];
+
+            byte[] temp = BitConverter.GetBytes(CommandParameters.TransactionId);
+
+            request[0] = temp[1];
+            request[1] = temp[0];
+
+            temp = BitConverter.GetBytes(CommandParameters.ProtocolId);
+            request[2] = temp[1];
+            request[3] = temp[0];
+
+            temp = BitConverter.GetBytes(CommandParameters.Length);
+            request[4] = temp[1];
+            request[5] = temp[0];
+
+            request[6] = CommandParameters.UnitId;
+            request[7] = CommandParameters.FunctionCode;
+
+            temp = BitConverter.GetBytes(((ModbusWriteCommandParameters)CommandParameters).OutputAddress);
+            request[8] = temp[1];
+            request[9] = temp[0];
+
+            temp = BitConverter.GetBytes(((ModbusWriteCommandParameters)CommandParameters).Value);
+            request[10] = temp[1];
+            request[11] = temp[0];
+
+            return request;
         }
 
         /// <inheritdoc />
         public override Dictionary<Tuple<PointType, ushort>, ushort> ParseResponse(byte[] response)
         {
             //TO DO: IMPLEMENT
-            throw new NotImplementedException();
+            Dictionary<Tuple<PointType, ushort>, ushort> Response = new Dictionary<Tuple<PointType, ushort>, ushort>();
+
+            ushort address = (ushort)IPAddress.NetworkToHostOrder(BitConverter.ToInt16(response, 8));
+            ushort value = (ushort)IPAddress.NetworkToHostOrder(BitConverter.ToInt16(response, 10));
+            Response.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_OUTPUT, address), value);
+
+
+            return Response;
         }
     }
 }
