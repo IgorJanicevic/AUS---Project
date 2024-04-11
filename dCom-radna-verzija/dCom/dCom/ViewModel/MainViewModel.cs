@@ -148,10 +148,10 @@ namespace dCom.ViewModel
 					return new DigitalOutput(c, processingManager, this, configuration, i);
 
 				case PointType.ANALOG_INPUT:
-					return new AnalaogInput(c, processingManager, this, configuration, i);
+                    return new AnalaogInput(c, processingManager, this, configuration, i);
 
 				case PointType.ANALOG_OUTPUT:
-					return new AnalogOutput(c, processingManager, this, configuration, i);
+                    return new AnalogOutput(c, processingManager, this, configuration, i);
 
 				default:
 					return null;

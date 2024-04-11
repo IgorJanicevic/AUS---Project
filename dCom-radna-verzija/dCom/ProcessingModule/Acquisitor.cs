@@ -57,17 +57,17 @@ namespace ProcessingModule
         /// </summary>
 		private void Acquisition_DoWork()
 		{
-            List<IConfigItem> lines = configuration.GetConfigurationItems();
+            List<IConfigItem> listConfigItems = configuration.GetConfigurationItems();
             while (true)
             {
                 acquisitionTrigger.WaitOne();
-                foreach (IConfigItem el in lines)
+                foreach (IConfigItem item in listConfigItems)
                {
-                    el.SecondsPassedSinceLastPoll++;
-                    if (el.SecondsPassedSinceLastPoll == el.AcquisitionInterval)
+                    item.SecondsPassedSinceLastPoll++;
+                    if (item.SecondsPassedSinceLastPoll == item.AcquisitionInterval)
                     {
-                        processingManager.ExecuteReadCommand(el, configuration.GetTransactionId(), configuration.UnitAddress, el.StartAddress, el.NumberOfRegisters);
-                        el.SecondsPassedSinceLastPoll = 0;
+                        processingManager.ExecuteReadCommand(item, configuration.GetTransactionId(), configuration.UnitAddress, item.StartAddress, item.NumberOfRegisters);
+                        item.SecondsPassedSinceLastPoll = 0;
                     }
 
                         

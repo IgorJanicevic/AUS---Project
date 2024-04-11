@@ -17,8 +17,7 @@ namespace ProcessingModule
         private IStorage storage;
         private AlarmProcessor alarmProcessor;
         private EGUConverter eguConverter;
-        private Timer digitalTimer;
-        private Timer analogTimer;
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessingManager"/> class.
@@ -33,29 +32,11 @@ namespace ProcessingModule
             this.eguConverter = new EGUConverter();
             this.functionExecutor.UpdatePointEvent += CommandExecutor_UpdatePointEvent;
 
-            digitalTimer = new Timer(DigitalRefreshCallback, null, 0, 2000); // Svake 2 sekunde
-            analogTimer = new Timer(AnalogRefreshCallback, null, 0, 4000); // Svake 4 sekunde
+          
 
         }
 
-        private void DigitalRefreshCallback(object state)
-        {
-            // Očitavanje digitalnih ulaza/izlaza i osvežavanje korisničkog interfejsa
-            // Pozovite odgovarajuće funkcije za čitanje i ažuriranje korisničkog interfejsa
-            // Na primer:
-            // ReadDigitalInputs();
-            // UpdateDigitalUI();
-        }
-
-   
-        private void AnalogRefreshCallback(object state)
-        {
-            // Očitavanje analognih ulaza/izlaza i osvežavanje korisničkog interfejsa
-            // Pozovite odgovarajuće funkcije za čitanje i ažuriranje korisničkog interfejsa
-            // Na primer:
-            // ReadAnalogInputs();
-            // UpdateAnalogUI();
-        }
+       
 
         /// <inheritdoc />
         public void ExecuteReadCommand(IConfigItem configItem, ushort transactionId, byte remoteUnitAddress, ushort startAddress, ushort numberOfPoints)
