@@ -25,6 +25,7 @@ namespace Modbus.ModbusFunctions
         public override byte[] PackRequest()
         {
             //TO DO: IMPLEMENT
+
             byte[] request = new byte[12];
 
             byte[] temp = BitConverter.GetBytes(CommandParameters.TransactionId);
@@ -50,7 +51,7 @@ namespace Modbus.ModbusFunctions
             temp = BitConverter.GetBytes(((ModbusReadCommandParameters)CommandParameters).Quantity);
             request[10] = temp[1];
             request[11] = temp[0];
-
+            
             return request;
         }
 
@@ -58,6 +59,7 @@ namespace Modbus.ModbusFunctions
         public override Dictionary<Tuple<PointType, ushort>, ushort> ParseResponse(byte[] response)
         {
             //TO DO: IMPLEMENT
+
             Dictionary<Tuple<PointType, ushort>, ushort> Response = new Dictionary<Tuple<PointType, ushort>, ushort>();
             ushort address = ((ModbusReadCommandParameters)CommandParameters).StartAddress;
             for (int i = 0; i < response[8] / 2; i++)

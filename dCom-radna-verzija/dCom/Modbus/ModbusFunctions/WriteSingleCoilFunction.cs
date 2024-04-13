@@ -24,7 +24,6 @@ namespace Modbus.ModbusFunctions
         /// <inheritdoc />
         public override byte[] PackRequest()
         {
-            //TO DO: IMPLEMENT
             byte[] request = new byte[12];
 
             byte[] temp = BitConverter.GetBytes(CommandParameters.TransactionId);
