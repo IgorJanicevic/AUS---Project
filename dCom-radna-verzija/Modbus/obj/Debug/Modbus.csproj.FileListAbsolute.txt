@@ -1,0 +1,9 @@
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\bin\Debug\Modbus.dll
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\bin\Debug\Modbus.pdb
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\bin\Debug\Common.dll
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\bin\Debug\Common.pdb
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\obj\Debug\Modbus.csproj.AssemblyReference.cache
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\obj\Debug\Modbus.csproj.CoreCompileInputs.cache
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\obj\Debug\Modbus.csproj.CopyComplete
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\obj\Debug\Modbus.dll
+C:\Users\HomePC\Documents\GitHub\AUS---Projekat\dCom-radna-verzija\Modbus\obj\Debug\Modbus.pdb
