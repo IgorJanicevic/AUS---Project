@@ -1,12 +1,8 @@
 STA 2
 TCP 49852
 
-DO_REG 1 2400 0 0 1 0 DO @PrvaVrata 2
-DO_REG 1 2401 0 0 1 0 DO @DrugaVrata 2
-DO_REG 1 2402 0 0 1 0 DO @PrviProzor 2
-DO_REG 1 2403 0 0 1 0 DO @DrugiProzor 2
-DO_REG 1 2404 0 0 1 0 DO @TreciProzor 2
-DO_REG 1 2405 0 0 1 0 DO @CetvrtiProzor 2
+DO_REG 2 2400 0 0 1 0 DO @Vrata 2
+DO_REG 4 2402 0 0 1 0 DO @Prozor 2
 
 HR_INT 1 4300 0 2 40 25 AO @Bojler 4
 HR_INT 1 4301 0 14 28 21 AO @KlimaUredjaj 4
